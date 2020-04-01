@@ -1,0 +1,51 @@
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      My First Post               # 标题 
+subtitle:   Hello World, Hello Blog #副标题
+date:       2017-02-06              # 时间
+author:     BY                      # 作者
+header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - 生活
+---
+
+## Hey
+>这是我的第一篇博客。
+
+Hey
+
+一、面试题
+
+1.1 理解vue 的生命周期
+
+1.2 如何进行非父子组件的通讯
+
+1.3 Vue响应式原理
+
+- app.message 修改数据 . Vue 内部 是如何监听 message 数据的改变
+  - Object.defineProperty => 监听对象属性的改变
+  -     const obj = {
+          message: '哈哈哈',
+          name: 'why'
+        }
+        Object.keys(obj).forEach(key => {
+          let value = obj[key]
+          // obj 是对象 key 是对象的键 {}是对对象的一些定义
+          Object.defineProperty(obj, key, {
+            set(newValue){
+              //  在这里可以监听到 key(键值)的改变
+              value = newValue
+            },
+            get(){
+              //可以监听 获取 key 的值
+              return value
+            }
+          })
+        })
+        obj.name = 'beo'
+  - 
+- 当数据发生改变，Vue 是如何知道要通知那些人，界面发生改变
+  - 发布者订阅模式
+
+
